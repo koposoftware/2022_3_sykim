@@ -1,7 +1,5 @@
 # Hana EZ(easy-one) 외환 플랫폼,Hana Global
-
-[프로젝트 홈페이지 ((https://koposoftware.github.io/2022_3_sykim/)
-
+[프로젝트 홈페이지 - https://koposoftware.github.io/2022_3_sykim/](https://koposoftware.github.io/2022_3_sykim/)
 # 1. 프로젝트 소개
 ### 1-1.프로젝트 배경
 • 현재 원/달러 환율이 2009년 7월 13일(1315.0원)이후 13년 만에  1400원대를 기록하면서, 환율, 금리, 물가등 '3중고'를 겪고 있다.
@@ -48,16 +46,15 @@
 
 # 5. 기타
 
- 
 # 6. 본인 소개
-
 |이름   |  김선영 |<img src="/img/김선영이력서사진.jpg" style="width:25%"/>|
 |연락처 | 이메일  | sunyoung_96@naver.com|
 
 |skill set|Frontend| HTML, CSS, Javascript|
-|         |Backend |Java, Spring, Oracle|
-|         |Database|Oracle, MySQL|
+| |Backend |Java, Spring, Oracle|
+| |Database|Oracle, MySQL|
 
 |자격증| 2021년 |ADsP|
-|      | 2021년 |GAIQ |
+| | 2021년 |GAIQ |
+|교육 사항|2022.03 ~ 2022.11 광명융합기술원 데이터분석과|
 
