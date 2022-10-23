@@ -37,7 +37,6 @@
 
 
 # 4. 프로젝트 결과
-   <img src="architecture.png"/><br>
    <img src="erd.JPG"/><br>
    
 ## 발표 ppt 
