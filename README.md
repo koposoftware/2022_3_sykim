@@ -17,13 +17,13 @@
 
 ### 2-2. 사용 기술
 <img src="/img/사용기술.png"/>
-* Spring 기반 웹 페이지 제작
-* Spring Scheduler 기반 예약 송금 구현
-* Python 환율 정보 크롤링
-* CoolSMS를 이용한 문자전송 구현
-* Spring Locale 한국어, 영어, 일본어 3개 언어 지원
-* API : Naver CLOVA OCR, Kakao Message, Kakao Map
-* FullCalendar 라이브러리를 활용한 캘린더 구현
+* Spring 기반 웹 페이지 제작 <br>
+* Spring Scheduler 기반 예약 송금 구현<br>
+* Python 환율 정보 크롤링<br>
+* CoolSMS를 이용한 문자전송 구현<br>
+* Spring Locale 한국어, 영어, 일본어 3개 언어 지원<br>
+* API : Naver CLOVA OCR, Kakao Message, Kakao Map<br>
+* FullCalendar 라이브러리를 활용한 캘린더 구현<br>
 
 
 ### 2-3. 서비스 아키텍처
