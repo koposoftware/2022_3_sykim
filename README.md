@@ -45,22 +45,20 @@
 
 ## 시연 동영상 
 
-  <iframe width="424" height="238" src="https://www.youtube.com/embed/reOGfxYJre0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="424" height="238" src="https://www.youtube.com/embed/reOGfxYJre0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 # 5. 기타
 
  
 # 6. 본인 소개
 
-|이름   |  김선영 |
-|연락처 | sunyoung_96@naver.com|
+|이름   |  김선영 |<img src="김선영이력서사진.jpg" style="width:25%"/>|
+|연락처 | 이메일  | sunyoung_96@naver.com|
 
-|skill set| 
-|| Frontend - HTML, CSS, Javascript|
-|| Backend - Java, Spring, Oracle|
+|skill set|Frontend| HTML, CSS, Javascript|
+|         |Backend |Java, Spring, Oracle|
+|         |Database|Oracle, MySQL|
 
-|자격증| 
-|| 2021.09.24 ADsP |
-|| 2021.09.01 GAIQ |
-
+|자격증| 2021년 |ADsP|
+|      | 2021년 |GAIQ |
 
