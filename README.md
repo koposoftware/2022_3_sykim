@@ -25,10 +25,10 @@
 
 
 ### 2-3. 서비스 아키텍처
-<img src="/img/서비스아키텍처.png"/>
+<img src="img/서비스아키텍처.png"/>
 
 ### 2-4. 시스템 아키텍처
-<img src="/img/시스템아키텍처.png"/>
+<img src="img/시스템아키텍처.png"/>
 
 # 3. 프로젝트 제안서
 [발표자료<img src="ppt.jpg"/>](/project.pptx)<br>
