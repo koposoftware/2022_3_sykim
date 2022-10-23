@@ -58,6 +58,7 @@
 # 5. 기타
 
 # 6. 본인 소개
+
 |이름 |김선영|![김선영](/김선영이력서사진.jpg){:width="60%"}|
 |연락처|이메일| sunyoung_96@naver.com|
 |skill set|Frontend| HTML, CSS, Javascript|
