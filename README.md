@@ -36,15 +36,16 @@
 
 * FullCalendar 라이브러리를 활용한 캘린더 구현<br>
 
-
-### 2-3. 서비스 아키텍처
-
-<img src="서비스아키텍처.png"/>
-
-### 2-4. 시스템 아키텍처
+### 2-3. 시스템 아키텍처
 
 <img src="시스템아키텍처.png"/>
 <Br>
+
+### 2-4. 서비스 아키텍처
+
+<img src="서비스아키텍처.png"/>
+
+
 
 # 3. 프로젝트 제안서
 
@@ -64,8 +65,7 @@
 <img src="개발일정.png"/><br>
    
 ## 발표 ppt
-[발표자료<img src="메인페이지.png"/>](/HanaGlobal.pptx)<br>
-g
+[발표자료<img src="main.png"/>](/HanaGlobal.pptx)<br>
 ## 시연 동영상 
 <iframe width="600" height="300" src="https://www.youtube.com/embed/mrwPjnsirt8" title="Hana EZ 외환 플랫폼(Hana Global)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
