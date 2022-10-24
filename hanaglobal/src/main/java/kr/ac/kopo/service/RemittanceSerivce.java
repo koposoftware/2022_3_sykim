@@ -35,37 +35,16 @@ public class RemittanceSerivce {
 
 	}
 
-	// 해외송금 이체
 	public void transfer1(Map<String, Object> transMap) {
 		remittanceDAO.transfer1(transMap);
 	}
 
-	// 예약송금
-//	@Scheduled(cron = "0 0/1 1,9,12,15,18,21 * * MON-SUN")
+
+	@Scheduled(cron = "0 0/1 1,9,12,15,18,21 * * MON-SUN")
 	public void transfer() {
 		remittanceDAO.transfer2();
 	}
 
-//	@Scheduled(cron = "0 0 09 * * MON-FRI")
-//	public void transfer2() {
-//		remittanceDAO.transfer2();	
-//	}
-//	@Scheduled(cron = "0 0 12 * * MON-FRI")
-//	public void transfer3() {
-//		remittanceDAO.transfer2();	
-//	}
-//	@Scheduled(cron = "0 0 15 * * MON-FRI")
-//	public void transfer4() {
-//		remittanceDAO.transfer2();
-//	}
-//	@Scheduled(cron = "0 0/1 18 * * MON-FRI")
-
-// 	@Scheduled(cron = "0 0 18 * * MON-FRI")
-//	public void transfer5() {
-//		remittanceDAO.transfer2();	
-//	}
-
-	// 예약송금삽입테스트
 	public void insertscheduledrem(Map<String, Object> transMap) {
 		remittanceDAO.insertscheduledrem(transMap);
 	}
@@ -99,8 +78,6 @@ public class RemittanceSerivce {
 		List<Map<String, Object>> statusList = remittanceDAO.selectStatus();
 		return statusList;
 	}
-
-	// 예약송금
 	public List<Map<String, Object>> scheduledremittance(String id) {
 		List<Map<String, Object>> trans = remittanceDAO.scheduledremittance(id);
 		return trans;
@@ -108,28 +85,3 @@ public class RemittanceSerivce {
 
 }
 
-//	   @Autowired
-//	   private FileRepository fileRepository;
-//
-//	    public FileService(FileRepository fileRepository) {
-//	        this.fileRepository = fileRepository;
-//	    }
-//
-//	    @Transactional
-//	    public Long saveFile(FileVOo fileDto) {
-//	        return fileRepository.save(fileDto.toEntity()).getId();
-//	    }
-//
-//	    @Transactional
-//	    public FileVO getFile(Long id) {
-//	        File file = fileRepository.findById(id).get();
-//
-//	        FileVO fileVO = FileVO.builder()
-//	                .id(id)
-//	                .origFilename(file.getOrigFilename())
-//	                .filename(file.getFilename())
-//	                .filePath(file.getFilePath())
-//	                .build();
-//	        return fileVO;
-//	    }
-//	}

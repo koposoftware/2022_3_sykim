@@ -14,8 +14,7 @@ public class MemberService {
 	@Autowired
 	private MemberDAO memberDAO;
 	
-	//로그인
-	public MemberVO login(MemberVO member) {//form에서 입력받은 memberVO를 
+	public MemberVO login(MemberVO member) {
 		MemberVO authMember = memberDAO.selectUser(member);
 		return authMember;
 	}
@@ -25,7 +24,7 @@ public class MemberService {
 		return authMember;
 	}
 	
-	// 회원가입
+
 	public void addMember(MemberVO newmember) {
 		memberDAO.memberJoinMethod(newmember);
 		}

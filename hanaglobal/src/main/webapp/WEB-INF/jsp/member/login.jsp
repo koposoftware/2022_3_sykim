@@ -114,7 +114,7 @@
       <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
       <script  type="text/javascript">
       //카카오 초기화
-            Kakao.init('e0bcb75cb258c0049bf6d26900e1f153');
+            Kakao.init('');
             console.log(Kakao.isInitialized());
             
             function kakaoLogin() {

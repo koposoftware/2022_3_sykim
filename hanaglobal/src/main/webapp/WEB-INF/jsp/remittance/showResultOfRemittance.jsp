@@ -31,8 +31,7 @@
 										<th style="width: 15%;">송금액</th> &nbsp;
 										<th style="width: 15%;">받는 사람</th> &nbsp;
 										
-<!-- 									<th style="width: 15%;">결제방법</th> &nbsp; -->
-<!-- 								    <th style="width: 15%;">상태</th> &nbsp; -->	
+
 									</tr>
 								</thead>
 								

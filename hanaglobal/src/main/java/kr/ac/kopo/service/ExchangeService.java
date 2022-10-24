@@ -53,7 +53,6 @@ public class ExchangeService {
 	}
 
 
-
 	public List<Map<String, Object>> selectTargetedtransaction(String id) {
 		List<Map<String, Object>> Targetedtransaction = exchangeDAO.selectTargetedtransaction(id);
 		return Targetedtransaction;
@@ -69,19 +68,18 @@ public class ExchangeService {
 		return list;
 	}
 
-	// 차트 보여주기
 	public List<Map<String, Object>> selectCountryChart(String id) {
 		List<Map<String, Object>> list = exchangeDAO.selectCountryChart(id);
 		return list;
 	}
 
-	// 관리자 환율
+
 	public List<Map<String, Object>> selectexchangerate() {
 		List<Map<String, Object>> list = exchangeDAO.selectexchangerate();
 		return list;
 	}
 
-//	@Scheduled(cron = "0 * * * * *")
+	@Scheduled(cron = "0 * * * * *")
 	public void tagetedRate() {
 		Map<String, Object> targetedMap = new HashMap<>();
 
@@ -96,7 +94,6 @@ public class ExchangeService {
 		List<SmsTargetedVO> smsTargetedList = new ArrayList<>();
 
 		for (int i = 0; i < memberList.size(); i++) {
-			System.out.println("뭐가 나오려나?" + memberList.get(i));
 			String id = memberList.get(i).getId();
 			String targetedRate = memberList.get(i).getTargetedRate();
 			String phoneNumber = exchangeDAO.getPhoneNum(id);
@@ -106,16 +103,16 @@ public class ExchangeService {
 			smsTargetedList.add(smsTargetedVO);
 		}
 		System.out.println(smsTargetedList);
-		String api_key = "NCSFFFSFY75VOGJA";
-		String api_secret = "UAD9YJVOI0NNTGZEVU6CAFFAZI8Q3NBX";
+		String api_key = "";
+		String api_secret = "";
 		Message coolsms = new Message(api_key, api_secret);
 
 		for (int i = 0; i < smsTargetedList.size(); i++) {
 			HashMap<String, String> set = new HashMap<String, String>();
-			set.put("to", smsTargetedList.get(i).getPhone()); // 수신번호
-			set.put("from", "01086396771"); // 발신번호
-			set.put("text", "[Hana Club]\r\n" + "목표하신 환율 " + smsTargetedList.get(i).getTargetedRate() + "원에 도달했습니다"); // 문자내용
-			set.put("type", "sms"); // 문자 타입
+			set.put("to", smsTargetedList.get(i).getPhone()); 
+			set.put("from", ""); 
+			set.put("text", ""); 
+			set.put("type", ""); 
 
 			try {
 				coolsms.send(set);

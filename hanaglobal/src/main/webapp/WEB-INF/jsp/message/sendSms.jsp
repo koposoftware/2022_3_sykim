@@ -10,11 +10,11 @@
 
 <body>
 	<div id="contents"> 
-		받는사람 : <input type="text" id="to" name="phone"/>   <!-- 인증번호 받을사람 휴대폰 번호 -->
-		<button type="button" id="send">전송</button><br> <!-- 문자보내는 전송버튼 -->
+		받는사람 : <input type="text" id="to" name="phone"/>   
+		<button type="button" id="send">전송</button><br> 
 		
-		인증번호 : <input type="text" id="userNum">   <!-- 인증번호 입력창 -->
-		<button type="button" id="enterBtn">확인</button>  <!-- 인증번호와 내가 입력창에 입력한 인증번호 비교하는 창 -->		
+		인증번호 : <input type="text" id="userNum"> 
+		<button type="button" id="enterBtn">확인</button> 	
     </div>
 <script>
 $('#send').click(function(){

@@ -225,16 +225,7 @@
               <span class="menu-title" >기타</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="auth">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
-              </ul>
-            </div>
-          </li>
+           </li>
        
         </ul>
       </nav>
@@ -243,7 +234,7 @@
         <!-- partial:partials/_navbar.html -->
         <nav class="navbar p-0 fixed-top d-flex flex-row">
           <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center" style="background-color:#fff">
-            <a class="navbar-brand brand-logo-mini" href="index.html"><img src="/img/club.png" alt="logo" width="1000px" /></a>
+            <a class="navbar-brand brand-logo-mini" href="index.html"><img src="" alt="logo" width="1000px" /></a>
           </div>
           <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch" style="background-color:#42b4b5;color:#fff">
             <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -317,7 +308,7 @@
                     </div>
                     <div class="preview-item-content">
                       <p class="preview-subject ellipsis mb-1">Mark send you a message</p>
-                      <p class="text-muted mb-0"> 1 Minutes ago </p>
+                     
                     </div>
                   </a>
                   <div class="dropdown-divider"></div>
@@ -327,7 +318,7 @@
                     </div>
                     <div class="preview-item-content">
                       <p class="preview-subject ellipsis mb-1">Cregh send you a message</p>
-                      <p class="text-muted mb-0"> 15 Minutes ago </p>
+                    
                     </div>
                   </a>
                   <div class="dropdown-divider"></div>
@@ -337,11 +328,11 @@
                     </div>
                     <div class="preview-item-content">
                       <p class="preview-subject ellipsis mb-1">Profile picture updated</p>
-                      <p class="text-muted mb-0"> 18 Minutes ago </p>
+                    
                     </div>
                   </a>
                   <div class="dropdown-divider"></div>
-                  <p class="p-3 mb-0 text-center">4 new messages</p>
+                 
                 </div>
               </li>
               <li class="nav-item dropdown border-left">
@@ -805,7 +796,6 @@
                  <div class="card-body" style="background-color:#f3f3f3;color:black">
                  <h4 class="card-title text-muted1" style="font-family: 'HanaB.ttf">환전/송금 이용자 수</h4>
                   <p class="font-weight-500">
-
                   <canvas id="myChart" width="400" height="100"></canvas>
                 </div>
                 </div>
@@ -856,7 +846,7 @@
                           <div class="flex-grow">
                             <div class="d-flex d-md-block d-xl-flex justify-content-between">
                               <h6 class="preview-subject">Leonard</h6>
-                              <p class="text-muted text-small">5 minutes ago</p>
+                        
                             </div>
                             <p class="text-muted">상태 진행 중</p>
                           </div>

@@ -24,24 +24,22 @@ public class AccountController {
 		return "/account/showMyAccount";
 	}
 
-	// 차트 분석
 	@GetMapping("/analysis")
 	public String test() {
 
 		return "/include/test";
 	}
 
-	// 계좌 조회 하기
 	@GetMapping("/accountrem")
 	public String Myaccount(Model model, HttpSession session) {
 
 		String id = ((MemberVO) session.getAttribute("loginVO")).getId();
 
-		List<Map<String, Object>> list = remittanceService.selectAll(id);// 계좌보기
+		List<Map<String, Object>> list = remittanceService.selectAll(id);
 
-		List<Map<String, Object>> translist = remittanceService.selectTrans(id); // 계좌잔액보기
+		List<Map<String, Object>> translist = remittanceService.selectTrans(id); 
 
-		List<Map<String, Object>> sum = remittanceService.selectSum(id); // 잔액더하기
+		List<Map<String, Object>> sum = remittanceService.selectSum(id); 
 
 		model.addAttribute("allaccount", list);
 		model.addAttribute("translist", translist);

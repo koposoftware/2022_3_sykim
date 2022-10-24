@@ -69,43 +69,7 @@
 
 
 </style>
-<script>
-    $(document).ready(function() {
-        $("#deviceTable").DataTable({
-            "pageLength": 10,
-            ajax:{
-               url:"${pageContext.request.contextPath}/showAccounttables",
-               type:"GET",
-               dataSrc :''
-               
-               
-            },
-            columns:[
-              
-               {targets: 0, data:"SENDER_NAME"},
-               {targets: 1, data:"WITHDRAWAL_ACCOUNTNO", "width":"250px"},
-               {targets: 2, data:"RECEIVED_NAME"},
-               {targets: 3, data:"DEPOSIT_ACCOUNTNO","width":"250px"},
-               {targets: 4, data:"CURRENCY"},
-               {targets: 5, data:"TRANS_AMOUNT"},
-               {targets: 6, data:"TRANS_DATE"},
-               {targets: 7, data:"STATUS"}
-            
-            ],
-            "bLengthChange": false,
-            "bFilter": false,
-            "bInfo": false,
-            "order": [[1, 'desc']],//order column in descending order.
-            "columnDefs": [
-                { "type": "date", "targets": [1] }//date column formatted like "03/23/2018 10:25:13 AM".
-            ], 
-            
-        });
-        
-    });
-    
-  
-</script>
+
 
 <body style="background-color:#f4f4f4">
    <!-- 잔액 -->
@@ -115,19 +79,11 @@
    
 
 
-<!-- test -->
- <!-- Portfolio Start -->
-        <!-- Service Start -->
         <div class="container-xxl py-4">
             <div class="container px-lg-5">
                 
                 <div class="row g-4" >
                 <div class="col-12 text-center" style="margin-bottom:-30px">
-<!--                         <ul class="list-inline mb-5" id="portfolio-flters"> -->
-<!--                             <li class="btn px-3 pe-4 active" data-filter="*">지난 3개월</li> -->
-<!--                             <li class="btn px-3 pe-4 active" data-filter=".first">지난 6개월</li> -->
-<!--                             <li class="btn px-3 pe-4 active" data-filter=".second">지난 1년</li> -->
-<!--                         </ul> -->
                     </div>
                     <div class="col-lg-4 col-md-6 wow animate__animated animate__zoomIn" data-wow-delay="0.1s" style="background-color:#e6eded;border-right:5px solid #fff">
                         <div class="service-item d-flex flex-column justify-content-center text-center rounded">
@@ -198,4 +154,41 @@
 <!-- Core theme JS-->
 <script src="js/scripts.js"></script>
 <script src="lib/wow/wow.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#deviceTable").DataTable({
+            "pageLength": 10,
+            ajax:{
+               url:"${pageContext.request.contextPath}/showAccounttables",
+               type:"GET",
+               dataSrc :''
+               
+               
+            },
+            columns:[
+              
+               {targets: 0, data:"SENDER_NAME"},
+               {targets: 1, data:"WITHDRAWAL_ACCOUNTNO", "width":"250px"},
+               {targets: 2, data:"RECEIVED_NAME"},
+               {targets: 3, data:"DEPOSIT_ACCOUNTNO","width":"250px"},
+               {targets: 4, data:"CURRENCY"},
+               {targets: 5, data:"TRANS_AMOUNT"},
+               {targets: 6, data:"TRANS_DATE"},
+               {targets: 7, data:"STATUS"}
+            
+            ],
+            "bLengthChange": false,
+            "bFilter": false,
+            "bInfo": false,
+            "order": [[1, 'desc']],//order column in descending order.
+            "columnDefs": [
+                { "type": "date", "targets": [1] }//date column formatted like "03/23/2018 10:25:13 AM".
+            ], 
+            
+        });
+        
+    });
+    
+  
+</script>
 </html>      

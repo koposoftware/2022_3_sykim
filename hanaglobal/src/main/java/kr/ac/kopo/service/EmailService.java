@@ -14,7 +14,7 @@ public class EmailService {
     
     public void sendSimpleMessage(EmailVO mailVO) {
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("skim24245@gmail.com");
+        message.setFrom("");
         message.setTo(mailVO.getAddress());
         message.setSubject(mailVO.getTitle());
         message.setText(mailVO.getContent());

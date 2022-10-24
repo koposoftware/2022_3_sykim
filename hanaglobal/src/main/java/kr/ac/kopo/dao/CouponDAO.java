@@ -28,37 +28,5 @@ public class CouponDAO {
 		return couponList;
 	}
 
-//@Autowired
-//	private SqlSessionTemplate sqlSessionTemplate;
-//	
-//    //1. 쿠폰 전체 개수 조회
-//    public int getCouponCnt() throws Exception;
-//   	
-//    
-//
-//    //2. 쿠폰 리스트 조회
-//    public List<ResCouponList> selectCouponLists(Map<String, Object> paramMap) throws Exception{
-//    	List<CouponVO> list = new ArrayList<>();
-//		list = sqlSessionTemplate.selectList("kr.ac.kopo.dao.CouponDAO.selectCouponLists", paramMap);
-//		return list;
-//    }
-//
-
-//    public void insertCoupon(Map<String, Object> paramMap) throws Exception;
-//    	
-//
-//    
-//    //4. 랜덤 쿠폰 번호 생성
-//    public String getCouponNo() throws Exception;
-
 }
 
-//public String makeCouponNum(String userID) {
-
-//      String accountNum = "";
-//      Random r = new Random();
-//      String randomNum1= Integer.toString(r.nextInt(1000)+1000);
-//      String randomNum2= Integer.toString(r.nextInt(1000)+1000);
-//      
-//      return "001-"+randomNum1+"-"+randomNum2;
-//

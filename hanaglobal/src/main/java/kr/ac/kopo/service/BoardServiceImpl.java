@@ -25,16 +25,7 @@ import kr.ac.kopo.dao.BoardDAO;
 			return list;
 		}
 
-		/*
-		 * @Override public List<BoardVO> getSelectBoard() { // TODO Auto-generated
-		 * method stub return null; }
-		 * 
-		 * @Override public List<BoardVO> InsertBoard() { // TODO Auto-generated method
-		 * stub return null; }
-		 * 
-		 * @Override public List<BoardVO> UpdateBoard() { // TODO Auto-generated method
-		 * stub return null; }
-		 */
+
 		
 	}
 

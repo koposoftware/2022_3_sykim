@@ -15,7 +15,6 @@ public class CouponService {
 	@Autowired
 	private CouponDAO couponDAO;
 
-	// 쿠폰을 db에 저장
 	public void insert(CouponVO couponVO) {
 		couponDAO.insert(couponVO);
 	}

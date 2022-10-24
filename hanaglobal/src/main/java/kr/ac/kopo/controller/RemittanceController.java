@@ -113,9 +113,6 @@ public class RemittanceController {
 		model.addAttribute("allaccount", list);
 		model.addAttribute("registerlist", registerlist);
 		model.addAttribute("translist", translist);
-
-		System.out.println("allaccount가지고 오나" + list);
-		System.out.println("registerlist가지고 오나" + registerlist);
 		System.out.println(list.get(0));
 		return "remittance/sendRemittance";
 	}
@@ -188,17 +185,17 @@ public class RemittanceController {
 																													// 새로운
 																													// 파일명
 																													// 만들기
-				String originName = file.getOriginalFilename(); // ex) 파일.jpg
-				String fileExtension = originName.substring(originName.lastIndexOf(".") + 1); // ex) jpg
-				originName = originName.substring(0, originName.lastIndexOf(".")); // ex) 파일
-				long fileSize = file.getSize(); // 파일 사이즈
+				String originName = file.getOriginalFilename(); 
+				String fileExtension = originName.substring(originName.lastIndexOf(".") + 1); 
+				originName = originName.substring(0, originName.lastIndexOf(".")); 
+				long fileSize = file.getSize();
 
-				File fileSave = new File(UPLOAD_PATH, fileId + "." + fileExtension); // ex) fileId.jpg
-				if (!fileSave.exists()) { // 폴더가 없을 경우 폴더 만들기
+				File fileSave = new File(UPLOAD_PATH, fileId + "." + fileExtension); 
+				if (!fileSave.exists()) { 
 					fileSave.mkdirs();
 				}
 				String url = "/img_folder/" + fileId + "." + fileExtension;
-				file.transferTo(fileSave); // fileSave의 형태로 파일 저장
+				file.transferTo(fileSave); 
 
 				System.out.println("fileId= " + fileId);
 				System.out.println("originName= " + originName);
@@ -217,7 +214,6 @@ public class RemittanceController {
 				transMap.put("currency", chooseCurrency);
 				transMap.put("transAmount", finalamount);
 				transMap.put("url", url);
-//             transMap.put("targeteddate", targeteddate);
 
 				remittanceService.transfer1(transMap);
 
@@ -256,7 +252,6 @@ public class RemittanceController {
 		model.addAttribute("transaction", transaction);
 
 		System.out.println(list.get(0));
-		System.out.println("송금거래내역 가지고 오나" + transaction);
 		return "remittance/showRemittanceAccount";
 	}
 
@@ -272,7 +267,6 @@ public class RemittanceController {
 		List<Map<String, Object>> transaction = remittanceService.selectTransaction(id);
 
 		System.out.println(list.get(0));
-		System.out.println("송금거래내역 가지고 오나" + transaction);
 		return transaction;
 	}
 
@@ -297,10 +291,7 @@ public class RemittanceController {
 	public List<Map<String, Object>> scheduledtrans(HttpSession session) {
 
 		String id = ((MemberVO) session.getAttribute("loginVO")).getId();
-
 		List<Map<String, Object>> transaction = remittanceService.scheduledremittance(id);
-
-		System.out.println("예약송금거래내역 가지고 오나" + transaction);
 		return transaction;
 	}
 

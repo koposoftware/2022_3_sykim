@@ -292,12 +292,12 @@ body {
 						let agree2 = $('#accountOpen1_agree2')[0]
 						let agree3 = $('#accountOpen1_agree3')[0]
 				
-						// 정보 동의 체크 안했다면? 첫번째
+				
 						if (!agree1.checked) {
 							bCheck = false
 							alert('약관 동의는 필수체크 항목입니다.')
 				
-							// 정보 동의 체크 안했다면? 두번째
+			
 						} else if (!agree2.checked) {
 							bCheck = false
 							alert('약관 동의는 필수체크 항목입니다.')
@@ -318,7 +318,7 @@ body {
 					}
 				</script>
 
-				<!-- modal -->
+	
 </body>
 
 </html>

@@ -21,7 +21,6 @@
 	integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
 	crossorigin="anonymous"></script>
 
-
 <link
 	href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap"
 	rel="stylesheet">
@@ -118,21 +117,14 @@ table, th, td {
 
 
 			 <table class="table ">
-<!-- 				<tr> -->
-<!-- 					출금 및 송금금액 정보 -->
-<!-- 					<th style="width: 270px; background-color: #f2f6f7">송금 금액</th> -->
-<%-- 					<td>${transactionList.amount}</td> --%>
-<!-- 				</tr> -->
-				
-			
-						
+
 				<tr>
 					<th style="background-color: #f2f6f7">통화구분</th>
 					<td>${transactionList.chooseCurrency} </td>
 				</tr>
 				<tr>
 					<th style="background-color: #f2f6f7">필요한 원화금액</th>
-<%-- 					<td>${transactionList.finalamount}원 </td> --%>
+
 					<td><fmt:formatNumber value="${transactionList.finalamount}" pattern="#,###"/>원</td>
 				</tr>
 				<br>
@@ -145,15 +137,14 @@ table, th, td {
 					<th style=" width: 270px; background-color: #f2f6f7">거래외국환은행</th> 
 					<td> ${transactionList.location}</td></tr>		
 							
-<!-- 				<tr> -->
-<!-- 					<th style="background-color: #f2f6f7">송금수수료</th> -->
-<%-- 					<td>${transactionList.remCharge} </td> --%>
-<!-- 				</tr> -->
+				<tr> 
+			<th style="background-color: #f2f6f7">송금수수료</th>
+				<td>${transactionList.remCharge} </td> 
 			
-<!-- 				<tr> -->
-<!-- 					<th style="background-color: #f2f6f7">전신료</th> -->
-<%-- 					<td>${transactionList.cableCharges} </td> --%>
-<!-- 				</tr> -->
+
+			<th style="background-color: #f2f6f7">전신료</th> 
+					<td>${transactionList.cableCharges} </td>
+
 				
 
 
@@ -198,15 +189,6 @@ table, th, td {
 				
 			</table>
 			</form>			
-
-
 		
-
-
-
-	
-
-
-				
 </body>
 </html>

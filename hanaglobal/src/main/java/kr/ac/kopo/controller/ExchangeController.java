@@ -124,7 +124,7 @@ public class ExchangeController {
 
 		List<AccountVO> list = exchangeService.selectAll(id);
 		model.addAttribute("allaccount", list);
-		System.out.println("현재 계좌 소지금액" + list.get(0).getBalance());
+
 
 		Map<String, Object> exchangeResultList = new HashMap<>();
 		String selectedAccount = req.getParameter("selectedAccount");
@@ -208,7 +208,6 @@ public class ExchangeController {
 		targetList.put("currency", currency);
 		targetList.put("CurrentRate", CurrentRate);
 		targetList.put("TargetedRate", TargetedRate);
-
 		targetList.put("chooseAccount", chooseAccount);
 		targetList.put("phone", phone);
 
@@ -222,16 +221,11 @@ public class ExchangeController {
 		targetedtrans.put("currency", currency);
 		targetedtrans.put("CurrentRate", CurrentRate);
 		targetedtrans.put("TargetedRate", TargetedRate);
-
 		targetedtrans.put("chooseAccount", chooseAccount);
 		targetedtrans.put("phone", phone);
-
 		exchangeService.inserttargetedtrans(targetedtrans);
-
 		exchangeService.targetExchange(targetedtrans, id);
-
 		ModelAndView mav = new ModelAndView("/exchange/showTargetTransHistory");
-
 		mav.addObject("targetList", targetList);
 		return mav;
 	}

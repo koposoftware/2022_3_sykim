@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class HanaclubApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HanaclubApplication.class, args);
+		SpringApplication.run(HanaglobalApplication.class, args);
 	
 	}
 

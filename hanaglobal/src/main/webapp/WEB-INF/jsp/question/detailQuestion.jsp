@@ -32,7 +32,7 @@ $('#studentCourseInfo').DataTable( {
 
   },
 
-  "columns": [      //이부분이 중요  columns 정보 가져올때 해당 '열' data에 render을 걸어주면 된다!
+  "columns": [      
 
    {"data": "name"},
 
