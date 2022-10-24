@@ -8,8 +8,8 @@
 
 • 해외송금과 환전 서비스를 자주 이용했었던 같은 유학생으로서 외환 서비스를 이용하면서 불편했던 점은 개선함으로써 고객의 만족을 증진하기 위해 해당 서비스를 기획하였습니다.
 <div style="display:flex; align-items: center"> 
-<img src="시장현황.png" style="width:290px; margin:5px;"/>
-<img src="시장현황2.png" style="width:290px;height:150px; margin:5px;"/>
+<img src="시장현황.png" style="width:350px; margin:5px;"/>
+<img src="시장현황2.png" style="width:350px;height:185px; margin:5px;"/>
 </div>
 <br>
 
@@ -64,8 +64,7 @@
 <img src="개발일정.png"/><br>
    
 ## 발표 ppt
-
-발표자료<img src="메인페이지.png"/>(/Hana Ez 외환 플랫폼_김선영.pptx)<br>
+[발표자료<img src="메인페이지.png"/>](/HanaGlobal.pptx)<br>
 
 ## 시연 동영상 
 <iframe width="1217" height="659" src="https://www.youtube.com/embed/mrwPjnsirt8" title="Hana EZ 외환 플랫폼(Hana Global)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
