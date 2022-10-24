@@ -8,8 +8,8 @@
 
 • 해외송금과 환전 서비스를 자주 이용했었던 같은 유학생으로서 외환 서비스를 이용하면서 불편했던 점은 개선함으로써 고객의 만족을 증진하기 위해 해당 서비스를 기획하였습니다.
 <div style="display:flex; align-items: center"> 
-<img src="시장현황.png" style="width:350px; margin:5px;"/><br>
-<img src="시장현황2.png" style="width:350px;height:185px;margin:5px;"/><br>
+<img src="시장현황.png" style="width:450px; margin:5px;"/><br>
+<img src="시장현황2.png" style="width:350px;height:250px;margin:5px;"/><br>
 </div>
 <br>
 
