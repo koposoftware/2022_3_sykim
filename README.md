@@ -67,7 +67,7 @@
 ## 발표 ppt
 [발표자료<img src="main.png"/>](/HanaGlobal.pptx)<br>
 ## 시연 동영상 
-<iframe width="600" height="300" src="https://www.youtube.com/embed/mrwPjnsirt8" title="Hana EZ 외환 플랫폼(Hana Global)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="800" height="300" src="https://www.youtube.com/embed/mrwPjnsirt8" title="Hana EZ 외환 플랫폼(Hana Global)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 # 5. 본인 소개
 
