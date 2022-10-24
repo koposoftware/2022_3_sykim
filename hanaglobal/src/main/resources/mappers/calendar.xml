@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="kr.ac.kopo.dao.CalendarDAO">
+	
+
+	<select id="calendarList" parameterType="string" resultType="HashMap" >
+		SELECT 
+		ID,TITLE,WRITER,CONTENT,TO_DATE(START1,'YYYY-MM-DD HH24:MI:SS') AS START1,TO_DATE(END1,'YYYY-MM-DD HH24:MI:SS') AS END1,ALLDAY,TEXTCOLOR,BACKGROUNDCOLOR,BORDERCOLOR 
+		FROM CALENDAR WHERE ID = #{id}
+	</select>
+	
+	<insert id="insertAll" parameterType="hashMap">
+      INSERT INTO calendar(id,title,start1,end1) values(#{id},#{title},#{start1},#{end1})
+    </insert>
+
+  
+</mapper>
+

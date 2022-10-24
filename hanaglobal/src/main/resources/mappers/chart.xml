@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="rate.dao.rateDAO">
+
+	<select id="selectRate" parameterType="ChartVO"
+		resultType="ChartVO">
+		SELECT ROUND(TO_NUMBER(rate_date - TO_DATE('01-01-1970
+		00:00:00', 'DD-MM-YYYY HH24:MI:SS'))*24*60*60*1000) AS rate_date, rate
+		FROM (select to_date(rate_date, 'yyyy-MM-dd hh24:mi:ss') as rate_date,
+		to_number(substr(rate, 3, 5))+1000 as rate from ex_rate)
+	</select>
+
+
+   <select id="selectAnotherRate" parameterType="ChartVO"
+		resultType="ChartVO">
+	    SELECT ROUND(TO_NUMBER(rate_date - TO_DATE('01-01-1970
+		00:00:00', 'DD-MM-YYYY HH24:MI:SS'))*24*60*60*1000) AS rate_date, rate
+		FROM (select to_date(rate_date, 'yyyy-MM-dd hh24:mi:ss') as rate_date,
+		to_number(substr(rate, 3, 5))+1000 as rate from ex_rate where rate_date >= sysdate - 90)  
+	</select>
+
+</mapper>

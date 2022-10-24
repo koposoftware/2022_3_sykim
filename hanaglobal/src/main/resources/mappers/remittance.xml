@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="kr.ac.kopo.dao.RemittanceDAO">
+
+ <select id="selectAll" resultType="hashMap" parameterType="string"> 
+select account_no as accountNo, account_password as password, account_name as accountName, balance, account_type as accountType from k_account where id=#{id}
+ </select>
+ 
+ <select id="selectTrans" resultType="hashMap" parameterType="string"> 
+SELECT B.TRANS_NO,B.SENDER_NAME,B.RECEIVED_NAME,B.DEPOSIT_ACCOUNTNO,B.WITHDRAWAL_ACCOUNTNO,A.BALANCE,B.TRANS_AMOUNT,C.NAME
+FROM  K_ACCOUNT A, TRANSACTION B, K_MEMBER C  
+WHERE A.ACCOUNT_NO = B.WITHDRAWAL_ACCOUNTNO AND A.ID =C.ID AND C.ID =#{id} order by trans_no
+ </select>
+ 
+ 
+<select id="selectTransaction" resultType="hashMap" parameterType="string">
+select trans_no,sender_name,received_name,deposit_accountno,withdrawal_accountno,currency,to_char(trans_amount,'FM999,999,999,999')as trans_amount,trans_date,status from transaction order by trans_date desc
+ </select>
+ 
+ <select id="selectAllMember" resultType="hashMap" parameterType="string">
+select a.trans_no,a.sender_name,a.received_name,a.deposit_accountno,a.withdrawal_accountno,a.currency,to_char(a.trans_amount,'FM999,999,999,999')as 
+trans_amount,a.trans_date,a.url,a.status,b.id from transaction a inner join (select a.id,b.account_no from
+k_member a inner join k_account b on a.id = b.id) b on a.withdrawal_accountNo = b.account_no order by a.TRANS_DATE DESC
+ </select>
+
+<select id="selectStatus">
+   	SELECT * FROM TRANSACTION
+</select>
+ 
+<update id="updatestatus" parameterType="hashMap">
+update transaction set status='완료' where trans_no=#{trans_no}
+</update>
+ 
+ <select id="sum" resultType="hashMap" parameterType="string">
+select sum(balance) from k_account where id=#{id}
+ </select>
+ 
+  <select id="selectRegister" resultType="hashMap" parameterType="RegisterInfoVO"> 
+ select * from registerInformation
+ </select>
+
+  <select id="selectcommission" resultType="hashMap"> 
+	select * from k_exchange_rate where nationKR = '미국USD'
+ </select>
+ 
+   <insert id="registerInformation" parameterType="hashMap">
+        insert into registerInformation(engName,overseas,domestic,under$5000, over$5000,expenses,expenses2,phone,email,engAddr,receivedName,receivedPhone,receivedaddr1,receivedaddr2,chooseCurrency,receivedaccoutNo,receivedEmail, bankCode,swiftCode)
+         values('${engName}','${overseas}','${domestic}','${under$5000}','${over$5000}','${expenses}','${expenses2}',#{phone},#{email},#{engAddr},#{receivedName},#{receivedPhone},#{receivedaddr1},#{receivedaddr2},#{chooseCurrency},#{receivedaccoutNo},#{receivedEmail},#{bankCode},#{swiftCode})
+   </insert>
+   
+   <update id="transfer1" parameterType="hashMap">
+   BEGIN
+   		UPDATE K_ACCOUNT SET BALANCE = BALANCE - ${transAmount} WHERE ACCOUNT_NO = #{krwAccount};
+   		UPDATE K_ACCOUNT SET BALANCE = BALANCE + ${transAmount} WHERE ACCOUNT_NO = #{receivedAccount};
+   		insert INTO transaction(SENDER_NAME,RECEIVED_NAME,DEPOSIT_ACCOUNTNO,WITHDRAWAL_ACCOUNTNO,CURRENCY,TRANS_AMOUNT,URL) VALUES(#{senderName},#{receivedName},#{receivedAccount},#{krwAccount},#{currency},${transAmount},'${url}'); 
+   		COMMIT;
+   EXCEPTION 
+   	WHEN OTHERS THEN 
+   		ROLLBACK;
+   	END; 
+   </update>
+   
+   
+   <select id="transfer2" statementType="CALLABLE">
+        {CALL SCHEDULED_PROCEDURE()}
+   </select>   
+
+    <select id="scheduledremittance" resultType="hashMap" parameterType="string">
+     select id,trans_no,sender_name,received_name,deposit_accountno,
+  withdrawal_accountno,currency,to_char(trans_amount,'FM999,999,999,999')as trans_amount,
+  currentdate,targeteddate ||' '||time as targeteddate,status from scheduledtransaction where id=#{id} order by currentdate desc
+   </select>
+   
+   
+   <insert id="insertscheduledrem" parameterType="hashMap">
+    insert INTO scheduledtransaction(ID,SENDER_NAME,RECEIVED_NAME,DEPOSIT_ACCOUNTNO,WITHDRAWAL_ACCOUNTNO,CURRENCY,TRANS_AMOUNT,TARGETEDDATE,TIME) VALUES(#{id},#{senderName},#{receivedName},#{receivedAccount},#{krwAccount},#{currency},${transAmount},#{targeteddate},#{time})
+   </insert>
+
+</mapper>

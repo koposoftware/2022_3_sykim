@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="kr.ac.kopo.dao.ExchangeDAO">
+  <resultMap id="targetedExchangeRate" type="kr.ac.kopo.vo.TargetedVO">
+	  <result property="id" column="ID" />
+	  <result property="targetedRate" column="TARGETEDRATE" />
+  </resultMap>		
+
+
+ <select id="selectAll" resultType="AccountVO" parameterType="String"> 
+ select account_no as accountNo, account_password as password, account_name as accountName, balance, account_type as accountType from k_account where id=#{id}
+ </select>
+ 
+ <select id="selectExchange" resultType="hashMap" parameterType="string">
+ select nationKR,BUYBASICRATE from k_exchange_rate
+ </select>
+
+
+ <select id="selectbuybasicrate" resultType="hashMap" parameterType="string">
+ select BUYBASICRATE from k_exchange_rate where nationKR = '미국USD'
+ </select>
+
+
+ <select id="selectexchangerate" resultType="hashMap">
+select nationkr,BUYBASICRATE from k_exchange_rate where nationKR  in ('미국USD','중국CNY','일본JPY(100엔)','유럽연합EUR','호주AUD','영국GBP')
+ </select>
+
+
+ <select id="selectTrans" resultType="hashMap" parameterType="string">
+	select no,currency,to_char(totalnumber,'FM999,999,999')as totalnumber,to_char(cashbuyrate,'FM999,999,999,999.99')as CASHBUYRATE,primerate,applicablerate,primeexchangevalue,to_char(finalamount,'FM999,999,999,999.99') as FINALAMOUNT,to_char(trans_date,'YYYY-MM-DD')as trans_date,place from exchange_transaction where id = #{id} and primerate is not null order by no desc
+  </select>
+  
+  <insert id="insertAll" parameterType="ExchangeVO">
+     insert into k_exchange_rate(no,nationKr,cashBuyRate, cashSellRate,transferSendRate,transferReceiveRate,buyBasicRate,usdChangeRate) values(k_exchange_rate_no.nextval,#{nationKr},${cashBuyRate},${cashSellRate},${transferSendRate},${transferReceiveRate},${buyBasicRate},${usdChangeRate})
+  </insert>
+
+ <delete id="deleteAll">
+    delete from k_exchange_rate
+ </delete>
+ 
+ 
+ <update id="updateBalance">
+ 	update k_account set balance= #{balance} where account_no = #{accountNo}
+ </update>
+
+  <insert id="insertTransaction" parameterType="java.util.Map">
+    <selectKey keyProperty="sn" resultType="String" order="BEFORE">
+      SELECT emp_seq.NEXTVAL FROM dual
+   </selectKey>
+    insert into exchange_transaction(NO,CURRENCY,CASHBUYRATE,primerate,APPLICABLERATE,PRIMEEXCHANGEVALUE,FINALAMOUNT,TRANS_DATE,PLACE,TARGETEDRATE,ID,TOTALNUMBER) VALUES(#{sn},#{currency},#{cashBuy},#{exchangePer},#{R_exchangePer},#{preferential_fee},#{exchangePrice},#{pickupDate},#{location},#{targetedDate},#{id},#{forAmt_01})
+ </insert>
+
+ <insert id="insertTargeted" parameterType="hashMap">
+        insert into targeted_exchange(id,CurrentRate,TargetedRate,currency)values
+       (#{id},#{CurrentRate},#{TargetedRate},#{currency})
+</insert> 
+
+ <select id="selectTargetedtransaction" resultType="hashMap" parameterType="string">
+ select targeted_no,currency,id,to_char(targetedrate,'FM999,999,999,999.99')as targetedrate,currentrate,currentdate,status from targeted_exchange where id = #{id} order by targeted_no desc
+ </select>
+ 
+ 
+ <update id="updatestatus" parameterType="String">
+ update targeted_exchange set status='발송' where id=#{id}
+ </update>
+ 
+ 
+ <select id="selectCountryChart" resultType="hashMap" parameterType="string">
+ select currency,count(currency) from exchange_transaction where TRANS_DATE >  sysdate-1080 and id=#{id} group by currency
+ </select>
+ 
+ 
+ <select id="tagetedRate" statementType="CALLABLE" parameterType="map">
+ 	{CALL TARGETED_PROCEDURE(#{targetedList,mode=OUT,jdbcType=CURSOR,javaType=ResultSet,resultMap=targetedExchangeRate})}
+ </select>
+ 
+ <select id="getPhoneNum" resultType="String" parameterType="String">
+	SELECT PHONE FROM K_MEMBER WHERE ID =#{id}
+ </select>
+ 
+ 
+</mapper>
