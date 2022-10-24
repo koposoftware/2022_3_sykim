@@ -24,8 +24,7 @@
    crossorigin="anonymous">
 <link rel="stylesheet"
    href="/webjars/bootstrap/4.5.0/css/bootstrap.min.css" />
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
 <script
    src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
@@ -38,8 +37,6 @@
    crossorigin="anonymous"></script>
 <link href="css/style.css" rel="stylesheet">
 
-<!-- 글씨체 -->
-<!-- <link href="https://webfontworld.github.io/amore/AritaBuri.css" rel="stylesheet"> -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link
@@ -508,12 +505,7 @@ margin-right:350px;!important;
          </div>
       </div>
    </div>
-      
-    
-   
-   <!-- 모달 끝 -->
-   
-      
+
      <script src="https://unpkg.com/typewriter-effect@2.3.1/dist/core.js"></script>
    <script>
        
@@ -552,7 +544,7 @@ var app = document.getElementById('notificationBar');
       
       </script>
       <script>
-       //3개월전
+
       $(document).ready(function(){
          $.ajax({
                    url: '${pageContext.request.contextPath}/ex_otherrate',
@@ -631,10 +623,10 @@ var app = document.getElementById('notificationBar');
                 })
           });
        
-      //option에 따라서(주피터에서 이미 120으로 설정해서 6개월분을 가지고 옴)
+     
       $(document).ready(function(){
-          $("#sel_date").change(function(){ // 체인지 이벤트
-                 ; // 현재 변화된 객체의 value를 가져 올 수 있음.
+          $("#sel_date").change(function(){ 
+                 ; 
                 
           $('#container').empty();
           $.ajax({

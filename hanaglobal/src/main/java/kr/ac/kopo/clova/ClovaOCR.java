@@ -17,9 +17,9 @@ import org.json.JSONObject;
 
 public class ClovaOCR {
 	public static void main(String[] args) {
-		String apiURL = "https://e3vakbecmq.apigw.ntruss.com/custom/v1/17811/c73ed0db2039c00d6522ba3fbb9492ba442e06facf3a0a274892a278fa2194d2/general";
-		String secretKey = "SVRMaUxERFlyYUtId3NDSVdFT0d4U2ZxTm14UFlNYVE=";
-		String imageFile = "C:/springboot-workspace/hanaclub/src/main/resources/static/img/Rem_Document.png";
+		String apiURL = "";
+		String secretKey = "";
+		String imageFile = "";
 		
 		try {
 			URL url = new URL(apiURL);
